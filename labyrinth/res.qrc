@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/all">
+        <file>img/open.png</file>
+        <file>img/warning.png</file>
+        <file>img/veil.png</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>
