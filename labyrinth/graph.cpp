@@ -1,7 +1,6 @@
 #include "graph.h"
 #include <QDebug>
 #include <QTime>
-#include "types.h"
 
 Graph::Graph()
 {

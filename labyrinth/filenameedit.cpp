@@ -61,6 +61,7 @@ FileNameEdit::FileNameEdit(QWidget* parent)
                 w->setFixedSize(a, a);
                 return w;
                    })(this))
+    , __onClick([](QWidget* parent)->QString{ return QFileDialog::getOpenFileName(parent); })
 {
     __pb->setIcon(QIcon(":/all/img/open.png"));
     __pb->setToolTip("Указать файл");
@@ -78,7 +79,7 @@ FileNameEdit::FileNameEdit(QWidget* parent)
 }
 
 void FileNameEdit::callDialod() {
-    const QString s(QFileDialog::getOpenFileName(this, "Укажите файл с лабиринтом Федорука!", QString(), "Image(*.gif)"));
+    const QString s(__onClick(this));
     if (!QFile::exists(s)) {
         return;
     }

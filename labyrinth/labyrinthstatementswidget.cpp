@@ -16,7 +16,7 @@ LabyrinthStatementsWidget::~LabyrinthStatementsWidget()
 void LabyrinthStatementsWidget::setLabyrinth(const Labyrinth& l) {
     QString text;
     auto pushDoor = [&text, &l](const QPoint& from, const QPoint& to) {
-        text.append(QString("passage(%1,%2)\n").arg(QString::number(l.toId(from)), QString::number(l.toId(to))));
+        text.append(QString("passage(%1,%2).\n").arg(QString::number(l.toId(from)), QString::number(l.toId(to))));
     };
 
     for (int j(0); j != l.size().height(); ++j) {

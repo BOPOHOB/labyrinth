@@ -3,6 +3,7 @@
 #include <QtWinExtras>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QFileDialog>
 
 #include "filenameedit.h"
 #include "labyrinthparser.h"
@@ -24,6 +25,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     FileNameEdit* const input(new FileNameEdit(this));
     this->centralWidget()->layout()->addWidget(input);
+    input->setOpenFileFunction([](QWidget* parent)->QString {
+        return QFileDialog::getOpenFileName(parent, "Укажите файл с лабиринтом Федорука!", QString(), "Image(*.gif)");
+    });
 
     QHBoxLayout* l(new QHBoxLayout);
     static_cast<QVBoxLayout*>(this->centralWidget()->layout())->addLayout(l);
